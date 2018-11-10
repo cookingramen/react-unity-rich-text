@@ -1,7 +1,7 @@
-import ExampleComponent from './'
+import UnityRichTextComponent from './'
 
-describe('ExampleComponent', () => {
+describe('UnityRichTextComponent', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(UnityRichTextComponent).toBeTruthy()
   })
 })
