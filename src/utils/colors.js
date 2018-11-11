@@ -24,7 +24,7 @@ export default function colorToHex(color) {
     'yellow': '#ffff00'
   }
 
-  const hexReg = /#[a-fA-F0-9]{8}/
+  const hexReg = /#[a-fA-F0-9]{6,8}/
   if (hexReg.test(color)) {
     return color
   } else if (colorMap[color]) {

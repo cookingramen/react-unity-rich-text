@@ -11,7 +11,8 @@ export default class App extends Component {
       "We are <color=green>green</color> with envy",
       "<size=30>Some <color=#ff0000ff>RICH</color> text</size>",
       "We are <b>absolutely <i>definitely</i> not</b> amused",
-      "We are <b><i>definitely not</i></b> amused"
+      "We are <b><i>definitely not</i></b> amused",
+      "We are <color=#0000ff>colorfully</color> amused"
     ]
     const itens = testMessages.map(message => (
       <tr key={message}>
