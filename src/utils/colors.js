@@ -26,7 +26,7 @@ export default function colorToHex(color) {
 
   const hexReg = /#[a-fA-F0-9]{8}/
   if (hexReg.test(color)) {
-    return (color.substr(2) + color.substr(0, 2))
+    return color
   } else if (colorMap[color]) {
     return colorMap[color]
   } else {

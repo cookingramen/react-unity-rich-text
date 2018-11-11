@@ -1,4 +1,5 @@
 /* add css styles here (optional) */
 
-.test {
+.unityTextSpan + .unityTextSpan::before {
+  content: " ";
 }
