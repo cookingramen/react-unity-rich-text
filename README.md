@@ -15,12 +15,12 @@ npm install --save react-unity-rich-text
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-unity-rich-text'
+import UnityRichTextComponent from 'react-unity-rich-text'
 
 class Example extends Component {
   render () {
     return (
-      <MyComponent />
+      <UnityRichTextComponent>{"<size=30>Some unity <color=#ff0000ff>RICH</color> text</size>"}<UnityRichTextComponent>
     )
   }
 }

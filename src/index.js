@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import UnityParser from './utils/unityParser'
 
 import styles from './styles.css'
 
-export default class UnityRichTextComponent extends Component {
+export default class UnityRichTextComponent extends PureComponent {
   static propTypes = {
     children: PropTypes.string
   }
@@ -56,9 +56,7 @@ export default class UnityRichTextComponent extends Component {
     const parsedChildren = this.parser.parse(children)
 
     return (
-      <div className={styles.test}>
-        {this.parseElements(parsedChildren)}
-      </div>
+      this.parseElements(parsedChildren)
     )
   }
 }
