@@ -41,6 +41,7 @@ class Example extends Component {
 ### Supported tags
 
 The following list describes all the styling tags supported by Unity.
+
 | Tag | Description | Example |
 |:----|:------------|:--------|
 |b 	  | Renders the text in boldface. | We are <b>not</b> amused. |
@@ -51,6 +52,7 @@ The following list describes all the styling tags supported by Unity.
 ## Props
 
 The Unity Rich Text Component can receive functions as props to handle the styling of the `span` for each kind of supported tag. All of these must be functions that return a [**react style**](https://reactjs.org/docs/dom-elements.html#style).
+
 | Property | Parameters | Default return                  |
 |:---------|:-----------|:--------------------------------|
 | onBold   |            | `{fontWeight: 'bold'}`          |
