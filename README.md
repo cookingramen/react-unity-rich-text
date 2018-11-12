@@ -44,10 +44,10 @@ The following list describes all the styling tags supported by Unity.
 
 | Tag | Description | Example |
 |:----|:------------|:--------|
-|b 	  | Renders the text in boldface. | We are <b>not</b> amused. |
-|i    | Renders the text in italics.  | We are <i>usually</i> not amused. |
-|size |	Sets the size of the text according to the parameter value, given in pixels. |	   We are <size=50>largely</size> unaffected.
-|color |	Sets the color of the text according to the parameter value. The color can be specified in the traditional HTML format. #rrggbbaa or by using the default colors seen in the documentation |  <color=#00ffffff>…</color>
+|b 	  | Renders the text in boldface. | `We are <b>not</b> amused.` |
+|i    | Renders the text in italics.  | `We are <i>usually</i> not amused.` |
+|size |	Sets the size of the text according to the parameter value, given in pixels. |	   `We are <size=50>largely</size>` unaffected.
+|color |	Sets the color of the text according to the parameter value. The color can be specified in the traditional HTML format. #rrggbbaa or by using the default colors seen in the documentation |  `<color=#00ffffff>…</color>`
 
 ## Props
 
