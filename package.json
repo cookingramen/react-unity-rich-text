@@ -1,6 +1,6 @@
 {
   "name": "react-unity-rich-text",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "React component to parse and stylize unity rich text",
   "author": "emargollo",
   "license": "MIT",
