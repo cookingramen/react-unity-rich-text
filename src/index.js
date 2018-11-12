@@ -6,7 +6,26 @@ import styles from './styles.css'
 
 export default class UnityRichTextComponent extends PureComponent {
   static propTypes = {
-    children: PropTypes.string
+    children: PropTypes.string,
+    onBold: PropTypes.func,
+    onItalic: PropTypes.func,
+    onSize: PropTypes.func,
+    onColor: PropTypes.func
+  }
+
+  static defaultProps = {
+    onBold: () => {
+      return {fontWeight: 'bold'}
+    },
+    onItalic: () => {
+      return {fontStyle: 'italic'}
+    },
+    onSize: (size) => {
+      return {fontSize: `${size}px`}
+    },
+    onColor: (color) => {
+      return {color: color}
+    }
   }
 
   constructor(props) {
@@ -25,19 +44,25 @@ export default class UnityRichTextComponent extends PureComponent {
   }
 
   createElementSpan(element) {
-    let style = {}
+    const {
+      onBold,
+      onItalic,
+      onSize,
+      onColor
+    } = this.props
+    let style
     switch (element.name) {
       case 'b':
-        style.fontWeight = `bold`
+        style = onBold()
         break
       case 'i':
-        style.fontStyle = `italic`
+        style = onItalic()
         break
       case 'size':
-        style.fontSize = `${element.attributes.value}px`
+        style = onSize(element.attributes.value)
         break
       case 'color':
-        style.color = element.attributes.value
+        style = onColor(element.attributes.value)
         break
       default:
         console.error('unexpected tag')
