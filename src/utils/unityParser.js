@@ -2,6 +2,20 @@ import convert from 'xml-js'
 import colorToHex from './colors'
 
 export default class UnityRichTextParser {
+  constructor() {
+    this.currentId = 0
+  }
+
+  addKeyToElements(elements) {
+    return elements.map((element) => {
+      if (element.type !== 'element') return element
+      element.key = this.currentId
+      this.currentId++
+      element.elements = [...this.addKeyToElements(element.elements)]
+      return element
+    })
+  }
+
   parse(text) {
     const convertColorSize = text.replace(/[^<]*(color|size)=[^>]*/g, (e) => {
       const data = e.split('=')
@@ -10,6 +24,6 @@ export default class UnityRichTextParser {
     const textToParse = `<unityText>${convertColorSize}</unityText>`
     const result = convert.xml2js(textToParse, {compact: false, spaces: 4})
     const {elements: {0: {elements}}} = result
-    return elements
+    return this.addKeyToElements(elements)
   }
 }

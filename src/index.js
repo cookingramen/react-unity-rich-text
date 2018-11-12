@@ -39,11 +39,15 @@ export default class UnityRichTextComponent extends PureComponent {
       case 'color':
         style.color = element.attributes.value
         break
+      default:
+        console.error('unexpected tag')
+        break
     }
+
     return (
       <span
         className={styles.unityTextSpan}
-        key={`${element.name}${element.attributes ? element.attributes.value : null}`}
+        key={element.key}
         style={style}
       >
         {this.parseElements(element.elements)}
