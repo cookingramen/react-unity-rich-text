@@ -2,11 +2,12 @@
 
 > React component to parse and stylize unity rich text
 
+
+This component can be used to render [Unity's Rich Text](https://docs.unity3d.com/Manual/StyledText.html) in the webpage by creating `span` tags with the appropriate styling. Can be used for developing webtools to test and create dialogs to be used in an unity game.
+
 [![NPM](https://img.shields.io/npm/v/react-unity-rich-text.svg)](https://www.npmjs.com/package/react-unity-rich-text) [![Build Status](https://travis-ci.com/emargollo/react-unity-rich-text.svg?branch=master)](https://travis-ci.com/emargollo/react-unity-rich-text) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 [![Demo](https://raw.githubusercontent.com/emargollo/react-unity-rich-text/master/example/demo.gif)](https://emargollo.github.io/react-unity-rich-text/)
-
-This component can be used to render [Unity's Rich Text](https://docs.unity3d.com/Manual/StyledText.html) in the webpage by creating `span` tags with the appropriate styling.
 
 ## Install
 
