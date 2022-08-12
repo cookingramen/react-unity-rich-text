@@ -7,16 +7,16 @@ export default class App extends Component {
     super()
     this.state = {
       messages: [
-        "We are <b>not</b> amused.",
-        "We are <i>usually</i> not amused.",
-        "We are <size=50>largely</size> unaffected.",
-        "We are <color=green>green</color> with envy",
-        "<size=30>Some <color=#ff0000ff>RICH</color> text</size>",
-        "We are <b>absolutely <i>definitely</i> not</b> amused",
-        "We are <b><i>definitely not</i></b> amused",
-        "We are <color=#0000ff>colorfully</color> amused"
+        'We are <b>not</b> amused.',
+        'We are <i>usually</i> not amused.',
+        'We are <size=50>largely</size> unaffected.',
+        'We are <color=green>green</color> with envy',
+        '<size=30>Some <color=#ff0000ff>RICH</color> text</size>',
+        'We are <b>absolutely <i>definitely</i> not</b> amused',
+        'We are <b><i>definitely not</i></b> amused',
+        'We are <color=#0000ff>colorfully</color> amused'
       ],
-      customMessage:'Insert <b>your</b> message here'
+      customMessage: 'Insert <b>your</b> message here'
     }
   }
 
@@ -42,8 +42,8 @@ export default class App extends Component {
     ))
 
     return (
-      <div className="app">
-        <div className="wrapper">
+      <div className='app'>
+        <div className='wrapper'>
           <h1>React Unity Rich Text</h1>
           <table>
             <thead>
@@ -56,8 +56,8 @@ export default class App extends Component {
               {itens}
               <tr>
                 <td>
-                  <input
-                    className="input"
+                  <textarea
+                    className='input'
                     value={customMessage}
                     onChange={this.customMessageHandler}
                   />

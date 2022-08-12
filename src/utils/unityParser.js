@@ -24,20 +24,22 @@ export default class UnityRichTextParser {
       }
     ]
     try {
-      const convertColorSize = text.replace(/[^<]*(color|size|link|align)=[^>]*/g, (e) => {
-        const data = e.replaceAll('"', '').split('=')
-        switch (data[0]) {
-          case 'color':
-            return `${data[0]} value="${colorToHex(data[1])}"`
-          case 'size':
-            return `${data[0]} value="${data[1]}"`
-          case 'link':
-            return `a target="_blank" href="${data[1]}"`
-          case 'align':
-            return `${data[0]} value="${data[1]}"`
-        }
-      })
+      const convertColorSize = text
+        .replace(/[^<]*(color|size|link|align)=[^>]*/g, (e) => {
+          const data = e.replaceAll('"', '').split('=')
+          switch (data[0]) {
+            case 'color':
+              return `${data[0]} value="${colorToHex(data[1])}"`
+            case 'size':
+              return `${data[0]} value="${data[1]}"`
+            case 'link':
+              return `a target="_blank" href="${data[1]}"`
+            case 'align':
+              return `${data[0]} value="${data[1]}"`
+          }
+        })
         .replace('</link>', '</a>')
+        .replace(/(\n)/g, '<br />')
 
       const textToParse = `<unityText>${convertColorSize}</unityText>`
       result = convert.xml2js(textToParse, {compact: false, spaces: 4})

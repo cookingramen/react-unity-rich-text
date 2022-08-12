@@ -2,6 +2,7 @@
 
 > React component to parse and stylize unity rich text
 
+### Forked from [react-unity-rich text](https://github.com/emargollo/react-unity-rich-text) modified for [MatHost](https://mathost.eu)
 
 This component can be used to render [Unity's Rich Text](https://docs.unity3d.com/Manual/StyledText.html) in the webpage by creating `span` tags with the appropriate styling. Can be used for developing webtools to test and create dialogs to be used in an unity game.
 
@@ -43,12 +44,12 @@ class Example extends Component {
 
 The following list describes all the styling tags supported by Unity.
 
-| Tag | Description | Example |
-|:----|:------------|:--------|
-|b 	  | Renders the text in boldface. | `We are <b>not</b> amused.` |
-|i    | Renders the text in italics.  | `We are <i>usually</i> not amused.` |
-|size |	Sets the size of the text according to the parameter value, given in pixels. |	   `We are <size=50>largely</size> unaffected.`
-|color |	Sets the color of the text according to the parameter value. The color can be specified in the traditional HTML format. #rrggbbaa or by using the default colors seen in the documentation |  `<color=#00ffffff>…</color>`
+| Tag   | Description                                                                                                                                                                                 | Example                                          |
+|:------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------|
+| b 	   | Renders the text in boldface.                                                                                                                                                               | `We are <b>not</b> amused.`                      |
+| i     | Renders the text in italics.                                                                                                                                                                | `We are <i>usually</i> not amused.`              |
+| size  | 	Sets the size of the text according to the parameter value, given in pixels.                                                                                                               | 	   `We are <size=50>largely</size> unaffected.` |
+| color | 	Sets the color of the text according to the parameter value. The color can be specified in the traditional HTML format. #rrggbbaa or by using the default colors seen in the documentation | `<color=#00ffffff>…</color>`                     |
 
 ## Props
 

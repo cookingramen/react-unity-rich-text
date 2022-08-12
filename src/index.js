@@ -9,6 +9,7 @@ export default class UnityRichTextComponent extends PureComponent {
     children: PropTypes.string,
     onBold: PropTypes.func,
     onItalic: PropTypes.func,
+    onUnderline: PropTypes.func,
     onSize: PropTypes.func,
     onColor: PropTypes.func,
     onCenter: PropTypes.func,
@@ -21,6 +22,9 @@ export default class UnityRichTextComponent extends PureComponent {
     },
     onItalic: () => {
       return {fontStyle: 'italic'}
+    },
+    onUnderline: () => {
+      return {textDecoration: 'underline'}
     },
     onSize: (size) => {
       return {fontSize: `${size}px`}
@@ -58,6 +62,7 @@ export default class UnityRichTextComponent extends PureComponent {
     const {
       onBold,
       onItalic,
+      onUnderline,
       onSize,
       onColor,
       onCenter,
@@ -71,6 +76,9 @@ export default class UnityRichTextComponent extends PureComponent {
       case 'i':
         style = onItalic()
         break
+      case 'u':
+        style = onUnderline()
+        break
       case 'size':
         style = onSize(element.attributes.value)
         break
@@ -83,12 +91,16 @@ export default class UnityRichTextComponent extends PureComponent {
       case 'a':
         style = onLink(element.attributes.href, element.attributes.target)
         break
+      case 'br': break
       default:
         console.error('unexpected tag: %s', element.name)
         break
     }
-
     switch (element.name) {
+      case 'br':
+        return (
+          <br />
+        )
       case 'a': {
         return (
           <a className={styles.unityTextSpan}
