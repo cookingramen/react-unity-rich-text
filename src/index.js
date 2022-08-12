@@ -10,7 +10,9 @@ export default class UnityRichTextComponent extends PureComponent {
     onBold: PropTypes.func,
     onItalic: PropTypes.func,
     onSize: PropTypes.func,
-    onColor: PropTypes.func
+    onColor: PropTypes.func,
+    onCenter: PropTypes.func,
+    onLink: PropTypes.func
   }
 
   static defaultProps = {
@@ -25,6 +27,12 @@ export default class UnityRichTextComponent extends PureComponent {
     },
     onColor: (color) => {
       return {color: color}
+    },
+    onCenter: (to) => {
+      return {to: to}
+    },
+    onLink: (href, target) => {
+      return {href: href, target: target}
     }
   }
 
@@ -34,6 +42,9 @@ export default class UnityRichTextComponent extends PureComponent {
   }
 
   parseElements(elements) {
+    if (elements === undefined) return
+    if (elements.elements) elements = elements.elements
+
     return elements.map((element) => {
       if (element.type === 'text') {
         return element.text
@@ -48,7 +59,9 @@ export default class UnityRichTextComponent extends PureComponent {
       onBold,
       onItalic,
       onSize,
-      onColor
+      onColor,
+      onCenter,
+      onLink
     } = this.props
     let style
     switch (element.name) {
@@ -64,20 +77,47 @@ export default class UnityRichTextComponent extends PureComponent {
       case 'color':
         style = onColor(element.attributes.value)
         break
+      case 'align':
+        style = onCenter(element.attributes.value)
+        break
+      case 'a':
+        style = onLink(element.attributes.href, element.attributes.target)
+        break
       default:
-        console.error('unexpected tag')
+        console.error('unexpected tag: %s', element.name)
         break
     }
 
-    return (
-      <span
-        className={styles.unityTextSpan}
-        key={element.key}
-        style={style}
-      >
-        {this.parseElements(element.elements)}
-      </span>
-    )
+    switch (element.name) {
+      case 'a': {
+        return (
+          <a className={styles.unityTextSpan}
+            key={element.key}
+            href={style.href}
+            target={style.target}>
+            {this.parseElements(element.elements)}
+          </a>
+        )
+      }
+      case 'align': {
+        return (
+          <div align={style.to}>
+            {this.parseElements(element.elements)}
+          </div>
+        )
+      }
+      default: {
+        return (
+          <span
+            className={styles.unityTextSpan}
+            key={element.key}
+            style={style}
+          >
+            {this.parseElements(element.elements)}
+          </span>
+        )
+      }
+    }
   }
 
   render() {
