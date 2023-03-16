@@ -21,7 +21,7 @@ export default class UnityRichTextComponent extends PureComponent {
       return {fontWeight: 'bold'}
     },
     onItalic: () => {
-      return {fontStyle: 'italic !important'}
+      return {fontStyle: 'italic'}
     },
     onUnderline: () => {
       return {textDecoration: 'underline'}
