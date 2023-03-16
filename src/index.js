@@ -18,10 +18,10 @@ export default class UnityRichTextComponent extends PureComponent {
 
   static defaultProps = {
     onBold: () => {
-      return {fontWeight: 'bold !important'}
+      return {fontWeight: 'bold'}
     },
     onItalic: () => {
-      return {fontStyle: 'italic'}
+      return {fontStyle: 'italic !important'}
     },
     onUnderline: () => {
       return {textDecoration: 'underline'}
