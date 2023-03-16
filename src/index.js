@@ -68,7 +68,7 @@ export default class UnityRichTextComponent extends PureComponent {
       onCenter,
       onLink
     } = this.props
-    let style
+    let style = onItalic()
     switch (element.name) {
       case 'b':
         style = onBold()
