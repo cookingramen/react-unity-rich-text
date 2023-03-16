@@ -94,6 +94,7 @@ export default class UnityRichTextComponent extends PureComponent {
       case 'br': break
       default:
         console.error('unexpected tag: %s', element.name)
+        style = onItalic()
         break
     }
     switch (element.name) {
