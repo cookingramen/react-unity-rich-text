@@ -31,6 +31,6 @@ export default function colorToHex(color) {
     return colorMap[color]
   } else {
     console.error('invalid color choice')
-    return colorMap['red']
+    return colorMap['white']
   }
 }
