@@ -4,7 +4,6 @@ export default function colorToHex(color) {
     'black': '#000000',
     'blue': '#0000ff',
     'brown': '#a52a2a',
-    'cyan': '#00ffff',
     'darkblue': '#0000a0',
     'fuchsia': '#ff00ff',
     'green': '#008000',
